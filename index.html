@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UX/UI</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!--aside section start-->
+      <aside>
+        <div class="sidebar">
+          <div class="top">
+            <div class="logo">
+              <h2>Mega<span class="danger">Soft</span></h2>
+            </div>
+            <div class="close" id="close_btn">
+              <span class="material-symbols-outlined">close</span>
+            </div>
+          </div>
+
+          <a href="#">
+            <span class="material-symbols-outlined">home</span>
+            <h3>Dashboard</h3>
+          </a>
+
+          <a href="#" id="customers-tab" class="active">
+            <span class="material-symbols-outlined">person_outline</span>
+            <h3>Clientes</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-symbols-outlined">insights</span>
+            <h3>Dados</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-symbols-outlined">mail_outline</span>
+            <h3>Mensagens</h3>
+            <span class="msg_count">+99</span>
+          </a>
+
+          <a href="#">
+            <span class="material-symbols-outlined">receipt_long</span>
+            <h3>Produtos</h3>
+          </a>
+
+          <a href="#" id="receives-tab">
+            <span class="material-symbols-outlined">local_shipping</span>
+            <h3>Pedidos</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-symbols-outlined">report</span>
+            <h3>Relatórios</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-symbols-outlined">settings</span>
+            <h3>Configurações</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-symbols-outlined">add</span>
+            <h3>Add Produto</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-symbols-outlined">logout</span>
+            <h3>Desconectar</h3>
+          </a>
+        </div>
+      </aside>
+      <!--aside section end-->
+
+      <!--main section start-->
+      <main>
+        <div id="dashboard-content">
+          <h1>Dashboard</h1>
+          <div class="date">
+            <input type="date" />
+          </div>
+
+          <div class="insights">
+            <!-- start selling -->
+            <div class="sales">
+              <span class="material-symbols-outlined">trending_up</span>
+              <div class="middle">
+                <div class="left">
+                  <h3>Total de vendas</h3>
+                  <h1>R$25.23</h1>
+                </div>
+                <div class="progress">
+                  <svg>
+                    <circle r="30" cy="40" cx="40"></circle>
+                  </svg>
+                  <div class="number">80%</div>
+                </div>
+              </div>
+              <small>Last 24 Hours</small>
+            </div>
+            <!-- End selling -->
+
+            <!-- Start expenses -->
+
+            <div class="Income">
+              <span class="material-symbols-outlined">local_mall</span>
+              <div class="middle">
+                <div class="left">
+                  <h3>Compras</h3>
+                  <h1>R$25.23</h1>
+                </div>
+                <div class="progress">
+                  <svg>
+                    <circle r="30" cy="40" cx="40"></circle>
+                  </svg>
+                  <div class="number">80%</div>
+                </div>
+              </div>
+              <small>Last 24 Hours</small>
+            </div>
+
+            <!-- End expenses -->
+
+            <!-- Start expenses -->
+
+            <div class="expenses">
+              <span class="material-symbols-outlined">stacked_line_chart</span>
+              <div class="middle">
+                <div class="left">
+                  <h3>Despesas</h3>
+                  <h1>R$25.23</h1>
+                </div>
+                <div class="progress">
+                  <svg>
+                    <circle r="30" cy="40" cx="40"></circle>
+                  </svg>
+                  <div class="number">80%</div>
+                </div>
+              </div>
+              <small>Last 24 Hours</small>
+            </div>
+          </div>
+
+          <!--End inside-->
+
+          <!--Start recent Order -->
+
+          <div class="recent_order">
+            <h1>Pedidos Recentes</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome do Produto</th>
+                  <th>Código de barra</th>
+                  <th>Pagamento</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Calça Jeans</td>
+                  <td>456</td>
+                  <td>Dinheiro</td>
+                  <td class="warning">Entregue</td>
+                  <td class="primary">Detalhes</td>
+                </tr>
+                <tr>
+                  <td>Saia verão 2024</td>
+                  <td>456</td>
+                  <td>Pix</td>
+                  <td class="warning">A caminho</td>
+                  <td class="primary">Detalhes</td>
+                </tr>
+                <tr>
+                  <td>Vestidos casamentos</td>
+                  <td>456</td>
+                  <td>Cartão débito</td>
+                  <td class="warning">Processamento</td>
+                  <td class="primary">Detalhes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!--End recent order-->
+        </div>
+
+        <div class="data-container" id="receives-content" style="display: none">
+          <h1>Situação dos Pedidos</h1>
+          <div class="status-container">
+            <div class="chart-container">
+              <canvas id="ordersPieChart" width="400" height="400"></canvas>
+            </div>
+            <div id="statusDetails" class="status"></div>
+          </div>
+
+          <div class="details-container">
+            <div class="table-container">
+              <h3>A Caminho</h3>
+
+              <table class="details-table" id="tableACaminho">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Previsão</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+
+            <div class="table-container">
+              <h3>Atrasados</h3>
+
+              <table class="details-table" id="tableAtrasados">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Previsão</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!--main section end-->
+
+      <!--start right section-->
+      <div class="right">
+        <div class="top">
+          <button id="menu_bar">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-symbols-outlined active">light_mode</span>
+            <span class="material-symbols-outlined">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p><b>Mega</b></p>
+              <p>Admin</p>
+              <small class="text-muted"></small>
+            </div>
+            <div class="profile-photo">
+              <img src="/img/logo.png.png" alt="Logo da Empresa" />
+            </div>
+          </div>
+        </div>
+        <!--End Top-->
+
+        <!--Stat recent update-->
+
+        <div class="recent_updates">
+          <h2>Atualizações</h2>
+          <div class="updates">
+            <!-- Update 1 -->
+            <div class="update">
+              <div class="profile-photo">
+                <img src="/img/logo_ADQ.avif" alt="Logo da Empresa" />
+              </div>
+              <div class="message">
+                <p><b>Mega</b> Recebeu esse pedido.</p>
+              </div>
+            </div>
+
+            <!-- Update 2 -->
+            <div class="update">
+              <div class="profile-photo">
+                <img src="/img/logo_ADQ.avif" alt="Logo da Empresa" />
+              </div>
+              <div class="message">
+                <p><b>Mega</b> Recebeu esse pedido.</p>
+              </div>
+            </div>
+
+            <!-- Update 3 -->
+            <div class="update">
+              <div class="profile-photo">
+                <img src="/img/logo_miller.avif" alt="Logo da Empresa" />
+              </div>
+              <div class="message">
+                <p><b>Mega</b> Recebeu esse pedido.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- end recent update-->
+
+        <!--start sale analytic-->
+
+        <div class="sales_analytics">
+          <h2>Estatistícas de vendas</h2>
+
+          <!-- Online Orders -->
+          <div class="item">
+            <div class="icon">
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </div>
+            <div class="right_text">
+              <div class="info">
+                <h3>Pedido online</h3>
+                <small class="text-muted">Última vez online há 2 horas</small>
+              </div>
+              <h5 class="danger">-17%</h5>
+              <h3>3849</h3>
+            </div>
+          </div>
+
+          <!-- Repeated Online Orders -->
+          <div class="item">
+            <div class="icon">
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </div>
+            <div class="right_text">
+              <div class="info">
+                <h3>Pedido online</h3>
+                <small class="text-muted">Última vez online há 2 horas</small>
+              </div>
+              <h5 class="danger">-17%</h5>
+              <h3>3849</h3>
+            </div>
+          </div>
+
+          <!-- Another Online Orders -->
+          <div class="item">
+            <div class="icon">
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </div>
+            <div class="right_text">
+              <div class="info">
+                <h3>Pedido Online</h3>
+                <small class="text-muted">Última vez online há 2 horas</small>
+              </div>
+              <h5 class="danger">-17%</h5>
+              <h3>3849</h3>
+            </div>
+          </div>
+
+          <!-- Add Products -->
+          <div class="item add_products">
+            <div>
+              <span class="material-symbols-outlined">add</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end right section-->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
